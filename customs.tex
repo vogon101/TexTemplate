@@ -1,0 +1,100 @@
+\usepackage{hyperref} 
+\usepackage{url}
+\usepackage[hyphenbreaks]{breakurl}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{import}
+\usepackage[list=true]{subcaption}
+\usepackage{pgfplots}
+\usepackage[section]{placeins}
+\usepackage{pgfplotstable}
+\usepackage{pgfplots}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{tikz}
+\usepackage{tkz-fct}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{csquotes}
+
+\usepackage{titling}
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+
+\pgfplotstableset{% global config, for example in the preamble
+	fixed,precision=2,
+	begin table=\begin{longtable},
+		end table=\end{longtable}
+}
+\usepgfplotslibrary{statistics}
+%\pgfplotstableread{results.dat}\datatable
+
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{figure}
+\usepackage[toc,page]{appendix}
+
+
+\definecolor{code-green}{HTML}{29d875}
+\definecolor{code-blue}{HTML}{297bd8}
+
+\newsavebox\ltmcbox
+
+\def\code#1{\texttt{#1}}
+
+\renewcommand{\ttdefault}{pcr}
+\lstset{
+	basicstyle=\small\ttfamily,
+	numbers=left,
+	breaklines=true,
+	postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookrightarrow\space}},
+	keywordstyle=\bfseries,
+	keywordstyle=[2]\itshape,
+	keywordstyle=[3],
+	stringstyle=\itshape,
+	commentstyle=\color{gray},
+	morecomment=[l][\color{magenta}]{\#},
+	showstringspaces=false
+}
+
+\lstdefinelanguage{Scala}{	
+	keywords=[2]{List, DenseVector},
+	keywords=[3]{that, DELTA\_TIME},
+	morekeywords={abstract,case,catch,class,def,
+		do,else,extends,false,final,finally,
+		for,if,implicit,import,match,mixin,
+		new,null,object,override,package, 
+		private,protected,requires,return,sealed,
+		super,this,trait,true,try,
+		type,val,var,while,with,yield,Double},
+	sensitive,
+	morecomment=[l]//,
+	morecomment=[n]{/*}{*/},
+	morestring=[b]",
+	morestring=[b]',
+	morestring=[b]""",
+}
+
+
+\newcommand{\matr}[1]{\mathbf{#1}}
+
+\bibliographystyle{apalike}
+\usepackage[paper=a4paper,margin=1in]{geometry}
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{\customTile\\}
+\lhead{\customLHead}
+\rhead{\customAuthor}
+\rfoot{Page $\vert$ \textbf{\thepage}}
+
+\title{\customTile}
+\author{\customAuthor}
+\date{\customDate}
